@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icia.web.dao.PlanMakeDao">
+
+<!-- resultMap 시작 -->
+<resultMap type="com.icia.web.model.PlanMake" id="planMakeResultMap">
+   <id column="P_NO_SEQ" property="pNoSeq2" />
+   <result column="USER_ID2" property="userId2" />
+   <result column="P_TITLE" property="pTitle" />
+     <result column="REG_DATE2" property="regDate2" />
+      <result column="P_START" property="pStart" />
+      <result column="P_END" property="pEnd" />
+</resultMap>
+
+<!-- 일정 추가 --> 
+<insert id="planMakeInsert2" parameterType="com.icia.web.model.PlanMake">
+<selectKey resultType="long" keyProperty="pNoSeq" order="BEFORE">
+   SELECT P_NO_SEQ.NEXTVAL FROM DUAL
+</selectKey>
+   INSERT INTO PLAN_MAKE (
+       P_NO_SEQ,
+       USER_ID2,
+       P_TITLE,
+       REG_DATE2,
+       P_START,
+       P_END
+   ) VALUES (
+       #{pNoSeq},
+       #{userId2},
+       #{pTitle},
+       SYSDATE,
+       #{pStart},
+       #{pEnd}
+   )
+</insert>
+
+<!-- myPlan 일정 조회 -->
+<select id="planMakeSelect2" parameterType="long" resultMap="planMakeResultMap" >
+SELECT
+    P_NO_SEQ,
+    NVL(USER_ID2,'') AS USER_ID2,
+    NVL(P_TITLE,'') AS P_TITLE,
+    NVL(TO_CHAR(REG_DATE2, 'YYYY.MM.DD'),'') AS REG_DATE2,
+    NVL(P_START,'') AS P_START,
+    NVL(P_END,'') AS P_END
+FROM
+    PLAN_MAKE
+WHERE 
+      P_NO_SEQ = #{value}
+</select>
+
+
+<select id="planList" parameterType="com.icia.web.model.PlanMake" resultMap="planMakeResultMap">
+SELECT
+    M.P_NO_SEQ,
+    M.USER_ID2,
+    M.P_TITLE,
+    M.REG_DATE2,
+    M.P_START,
+    M.P_END
+FROM
+    PLAN_MAKE M
+WHERE M.USER_ID2 = #{userId2}
+
+ORDER BY P_NO_SEQ DESC
+</select>
+
+
+<delete id="planDelete" parameterType="long">
+DELETE FROM PLAN_MAKE
+ WHERE P_NO_SEQ = #{value}
+</delete>
+
+
+</mapper>

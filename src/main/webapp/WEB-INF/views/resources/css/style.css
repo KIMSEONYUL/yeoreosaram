@@ -1,0 +1,1625 @@
+/**
+* Template Name: MyPortfolio - v2.2.0
+* Template URL: https://bootstrapmade.com/myportfolio-bootstrap-portfolio-website-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/*body {
+  font-family: "Inconsolata", sans-serif;
+  color: #939597;
+  padding-bottom: 40px;
+}*/
+body {
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: large;
+  
+  color: #939597;
+  padding-bottom: 40px;
+}
+
+.logo
+{
+   width: 250px;
+  height: 300px;
+  text-align: center;
+
+}
+
+.logo2
+{
+   text-align: center;
+}
+.name
+{
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: xx-large;
+}
+.name1
+{
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: large;
+}
+a {
+  color: #939597;
+  text-decoration: none;
+}
+a:hover {
+  color: #F5dF4D;
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+.filters a {
+  color: #000;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.filters a:hover, .filters a:focus, .filters a:active {
+  text-decoration: none;
+}
+
+.filters a:hover:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 1px;
+  background-color: #000;
+}
+
+.filters a.active {
+  color: #000;
+}
+
+.filters a.active:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 2px;
+  background-color: #000;
+}
+
+.item {
+  border: none;
+  margin-bottom: 30px;
+}
+
+.item .item-wrap {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.item .item-wrap:after {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s all ease-in-out;
+}
+
+.item .item-wrap img {
+  transition: .3s transform ease;
+  transform: scale(1);
+}
+
+.item .item-wrap > .work-info {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  transform: translateY(-50%);
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 20px;
+  transition: .3s all ease;
+}
+
+.item .item-wrap > .work-info h3 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.item .item-wrap > .work-info span {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+.item .item-wrap:hover {
+  text-decoration: none;
+}
+
+.item .item-wrap:hover img {
+  transform: scale(1.05);
+}
+
+.item .item-wrap:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.item .item-wrap:hover .work-info {
+  margin-top: 0px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.testimonial-wrap {
+  padding: 50px 50px 80px 50px;
+  background: #eceff2;
+}
+
+.testimonial-wrap .testimonial {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.testimonial-wrap .testimonial img {
+  border-radius: 50%;
+  width: 120px;
+  margin: 0 auto 30px auto;
+}
+
+.testimonial-wrap .testimonial blockquote p {
+  font-size: 20px;
+}
+
+.aa
+{
+   color:black;
+   text-shadow: 1px 1px 1px #000;
+}
+.h3 {
+  font-size: 20px;
+}
+
+.h4 {
+  font-size: 16px;
+}
+
+.heading {
+  font-size: 28px;
+}
+
+.readmore {
+  display: inline-block;
+    border: 0;
+  
+  padding: 10px 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #000;
+  transition: .2s all ease;
+  font-weight: 700;
+  background: #F5dF4D;  
+}
+
+.readmore:active, .readmore:focus, .readmore:hover {
+  outline: none;
+}
+
+.readmore:hover {
+  color: #000;
+
+   background: #ebdf91;
+}
+
+.testimonial-carousel .owl-dots {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.testimonial-carousel .owl-dots .owl-dot {
+  display: inline-block;
+}
+
+.testimonial-carousel .owl-dots .owl-dot > span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: #cbd3da;
+  border-radius: 50%;
+  margin: 5px;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active {
+  outline: none;
+}
+
+.testimonial-carousel .owl-dots .owl-dot.active > span {
+  background: #0d1e2d;
+}
+
+.sticky-content {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  /* required */
+}
+
+.list-line li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.list-line li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .7rem;
+  width: 10px;
+  height: 2px;
+  background: #000;
+}
+
+.form-control {
+  border-radius: 0;
+  background: #f8f9fa;
+  border: 1px solid transparent;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.form-control:active, .form-control:focus {
+  background: #eff1f4;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+
+.custom-progress {
+  height: 7px;
+  border-radius: 0;
+}
+
+.custom-progress .progress-bar {
+  background: #000;
+}
+
+/* Contact Form */
+.php-email-form .validate {
+  display: none;
+  color: red;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+.w
+{
+   
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+/* Custom Navmenu */
+.custom-navmenu {
+  background: #F5dF4D;
+  
+  
+}
+
+/*관리자페이지 nav*/
+.admin-navmenu {
+  background: #8da6b8;
+  
+}
+
+.custom-navmenu .custom-menu, .custom-navmenu .custom-menu li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.custom-navmenu .custom-menu li {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.custom-navmenu .custom-menu li a {
+  color: #939597;
+  padding: 10px 0 !important;
+}
+
+.custom-navmenu .custom-menu li a:hover {
+  text-decoration: none;
+}
+
+.custom-navmenu .custom-menu li.active a {
+  text-decoration: underline;
+}
+
+.custom-navmenu h3 {
+  font-size: 20px;
+  color:#939597;
+}
+
+.custom-navmenu p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.custom-navmenu a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.custom-navmenu a:hover {
+  color: #fff;
+}
+
+/* Custom Navbar */
+.custom-navbar {
+  padding-top: 50px;
+  width: 100%;
+}
+
+@media (max-width: 780px) {
+  .custom-navbar > .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.7rem;
+}
+
+/* Burger */
+.burger {
+  width: 28px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+}
+
+.burger:before, .burger span, .burger:after {
+  width: 100%;
+  height: 2px;
+  display: block;
+  background: #000;
+  border-radius: 2px;
+  position: absolute;
+  opacity: 1;
+}
+
+.burger:before, .burger:after {
+  transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transition: top 0.35s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1), background-color 1.15s cubic-bezier(0.86, 0, 0.07, 1);
+  content: "";
+}
+
+.burger:before {
+  top: 4px;
+}
+
+.burger span {
+  top: 15px;
+}
+
+.burger:after {
+  top: 26px;
+}
+
+/* Hover */
+.burger:hover:before {
+  top: 7px;
+}
+
+.burger:hover:after {
+  top: 23px;
+}
+
+/* Click */
+.burger.active span {
+  opacity: 0;
+}
+
+.burger.active:before, .burger.active:after {
+  top: 40%;
+}
+
+.burger.active:before {
+  transform: rotate(45deg);
+}
+
+.burger.active:after {
+  transform: rotate(-45deg);
+}
+
+.burger:focus {
+  outline: none;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  padding: 0 0 4rem 0;
+}
+
+.footer a {
+  color: #000;
+}
+
+.social a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  position: relative;
+  text-align: center;
+  color: #939597;
+}
+
+.social a span {
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.social a:hover {
+  color: #000;
+}
+
+
+/*네비게이션패딩  */
+.container {
+margin: 30px auto;
+}
+
+/*index styleseet(로그인창/회원가입창)*/
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 50px auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-top: 20px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  
+  border: none;
+  border-bottom: 1px solid #939597;
+  background-color: transparent;
+  transition: top .5s ease;
+}
+.form-signin input[type="password"] {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  
+  border: none;
+  border-bottom: 1px solid #939597;
+  background-color: transparent;
+  transition: top .5s ease;
+}
+.form-signin input[type="radio"] {
+  margin-top: 20px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  
+  boder: none;
+  border-bottom: 1px solid #939597;
+  background-color: transparent;
+  transition: top .5s ease;
+}
+#btnLogin {
+   width: 100%; height: 50px;
+   margin-top: 30px;
+   background: #F5dF4D;
+   color: #939597;
+   font-size: 20px;
+   border: none;
+   border-radius: 25px;
+}
+#btnAdmin {
+   width: 100%; height: 50px;
+   margin-top: 30px;
+   background: #8da6b8;
+   color:#168;
+   font-size: 20px;
+   border: none;
+   border-radius: 25px;
+}
+.caption {
+   margin-top: 20px;
+   text-align: center;
+}
+.caption a {
+   font-size: 15px; color: #939597;
+}
+#keepLogin {
+   margin-top: 20px;
+   text-align: center;
+   font-size: 15px; color: #939597;
+}
+
+/*regForm2 styleseet (회원가입창)*/
+/* .form-group {
+max-width: 330px;
+padding: 15px;
+margin: auto;
+} */
+
+.btn-group button{ 
+border: 1px solid #F5dF4D; background-color: #F5dF4D; color:#939597; padding: auto;
+margin: 0 auto; text-align: center;
+} 
+.btn-group button:hover{ color:white; background-color: #F5dF4D; }
+
+.btn-group2 button
+{
+   background-color: #fcfcfc;
+   color:gray;
+   border:2;
+   border-color: #168;
+   
+}
+.btn-group2 button:hover
+{
+   background-color: #bacad6;
+   color:gray;
+}
+
+#btnEmail {
+   margin: auto;
+   width: 50%;
+   padding: 5px;
+   width: 100%;
+   font-size: 18px;
+}
+
+/* 관리자 */
+.list{
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: xx-large;
+ 
+  padding-bottom: 40px;
+   color: #168;
+}
+/*adminDelete*/
+.form1
+{
+   margin:auto;
+}
+.btn22{
+   background-color: #fcfcfc;
+   border:2;
+   border-color: #168;
+   color:#168;
+}
+/*adminList*/
+.blueone {
+  border-collapse: collapse;
+}  
+.blueone th {
+  padding: 10px;
+  color: #168;
+  border-bottom: 3px solid #168;
+  text-align: center;
+}
+.blueone td {
+  color: #669;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.blueone tr:hover td {
+  color: #168;
+}
+
+
+/************************여행장소소개**************************/
+.report {
+font-family: 'Do Hyeon', sans-serif;
+  font-size: large;
+  
+  color: #939597;
+  padding-bottom: 40px;
+}
+
+/*-------지역 소개 css------*/
+/*--------------------------------------------------------------
+# Our Portfolio
+--------------------------------------------------------------*/
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 0 35px 0;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  margin: 0 15px 15px 0;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #444;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background: #fff;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+  background: #F5dF4D;
+  color: #fff;
+}
+
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-wrap img {
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+  text-align: center;
+  background: rgba(31, 53, 72, 0.6);
+  padding-bottom: 30px;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.portfolio .portfolio-wrap .portfolio-info a {
+  color: #428bca;
+  margin: 0 4px;
+  font-size: 18px;
+  line-height: 1;
+  background-color: #fff;
+  padding-top: 7px;
+  border-radius: 50px;
+  text-align: center;
+  width: 36px;
+  height: 35px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info a:hover {
+  background: #428bca;
+  color: #fff;
+}
+
+.portfolio .portfolio-wrap:hover {
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+  padding-bottom: 0;
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+.portfolio-details {
+  padding-top: 30px;
+}
+
+.portfolio-details .portfolio-details-container {
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-carousel {
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-details .portfolio-details-carousel .owl-nav, .portfolio-details .portfolio-details-carousel .owl-dots {
+  margin-top: 5px;
+  text-align: left;
+}
+
+.portfolio-details .portfolio-details-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd !important;
+}
+
+.portfolio-details .portfolio-details-carousel .owl-dot.active {
+  background-color: #428bca !important;
+}
+
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  position: absolute;
+  right: 0;
+  bottom: -70px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li + li {
+  margin-top: 10px;
+}
+
+.portfolio-details .portfolio-description {
+  padding-top: 50px;
+}
+
+.portfolio-details .portfolio-description h2 {
+  width: 50%;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .portfolio-details .portfolio-description h2 {
+    width: 100%;
+  }
+  .portfolio-details .portfolio-info {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+/* ------ venobox.css --------*/
+.vbox-overlay *, .vbox-overlay *:before, .vbox-overlay *:after{
+    -webkit-backface-visibility: hidden;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+.vbox-overlay * { 
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+}
+.vbox-overlay{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999999;
+}
+
+/* ----- navigation ----- */
+.vbox-title{
+    width: 100%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    padding: 6px 50px;
+    overflow: hidden;
+    position: fixed;
+    display: none;
+    left: 0;
+    z-index: 89;
+}
+.vbox-close{
+    cursor: pointer;
+    position: fixed;
+    top: -1px;
+    right: 0;
+    width: 50px;
+    height: 40px;
+    padding: 6px;
+    display: block;
+    background-position:10px center;
+    overflow: hidden;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    z-index: 99;
+}
+.vbox-left{
+    cursor: pointer;
+    position: fixed;
+    left: 0;
+    height: 40px;
+    overflow: hidden;
+    line-height: 28px;
+    font-size: 12px;
+    z-index: 99;
+    display: flex;
+    align-items:center;
+}
+.vbox-num{
+    display: inline-block;
+    margin: 6px 0 6px 15px;
+}
+/* ----- Social share ----- */
+.vbox-share{
+    line-height: 28px;
+    font-size: 12px;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    z-index: 98;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.vbox-share svg{
+    max-height: 28px;
+    width: 28px;
+    z-index: 10;
+    margin-left: 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    vertical-align: middle;
+}
+
+
+/* ----- navigation ARROWS ----- */
+.vbox-next, .vbox-prev{
+    position: fixed;
+    top: 50%;
+    margin-top: -15px;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+    width: 45px;
+    height: 45px;
+    z-index: 99;
+}
+.vbox-next span, .vbox-prev span{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top-color: #B6B6B6;
+    border-right-color: #B6B6B6;
+    text-indent: -100px;
+    position: absolute;
+    top: 8px;
+    display: block;
+}
+.vbox-prev{
+    left: 15px;
+}
+.vbox-next{
+    right: 15px;
+}
+.vbox-prev span{
+    left: 10px;
+    -ms-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.vbox-next span{
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    right: 10px;
+}
+/* ------- inline window ------ */
+.vbox-inline{
+    width: 420px;
+    height: 315px;
+    height: 70vh;
+    padding: 10px;
+    background: #fff;
+    margin: 0 auto;
+    overflow: auto;
+    text-align: left;
+}
+/* ------- Video & iFrames window ------ */
+.venoframe{
+    max-width: 100%;
+    width: 100%;
+    border: none;
+    width: 100%;
+    height: 260px;
+    height: 70vh;
+}
+.venoframe.vbvid{
+    height: 260px;
+}
+@media (min-width: 768px) {
+    .venoframe, .vbox-inline{
+        width: 90%;
+        height: 360px;
+        height: 70vh;
+    }
+    .venoframe.vbvid{
+        width: 640px;
+        height: 360px;
+    }
+}
+@media (min-width: 992px) {
+    .venoframe, .vbox-inline{
+        max-width: 1200px;
+        width: 80%;
+        height: 540px;
+        height: 70vh;
+    }
+    .venoframe.vbvid{
+        width: 960px;
+        height: 540px;
+    }
+}
+/* 
+Please do NOT edit this part! 
+or at least read this note: http://i.imgur.com/7C0ws9e.gif
+*/
+.vbox-open{
+    overflow: hidden;
+}
+.vbox-container{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    z-index: 20;
+    max-height: 100%;
+
+}
+
+.vbox-content{
+    text-align: center;
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 4%;
+}
+.vbox-container img{
+    max-width: 100%;
+    height: auto;
+}
+.vbox-figlio{
+    box-shadow: 0 0 12px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    max-width: 100%;
+    text-align: initial;
+}
+img.vbox-figlio{
+    -webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+.vbox-content.swipe-left{
+    margin-left: -200px !important;
+}
+.vbox-content.swipe-right{
+    margin-left: 200px !important;
+}
+.vbox-animated{
+    webkit-transition: margin 300ms ease-out;
+    transition: margin 300ms ease-out;
+}
+
+
+.image1 .text {
+
+ position:absolute;
+
+ top:40px; /* in conjunction with left property, decides the text position */
+
+ left:80px;
+
+ width:700px; /* optional, though better have one */
+ 
+ color: #fff;
+ font-size: 30px;
+ text-shadow: 2px 1px 1px #000;
+}
+/*------------------------개발자 소개 css----------*/
+/*--------------------------------------------------------------
+# Our Team
+--------------------------------------------------------------*/
+.team {
+  background: #fff;
+  padding: 60px 0 30px 0;
+}
+
+.team .member {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.team .member .pic {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.team .member img {
+  transition: all ease-in-out 0.4s;
+}
+
+.team .member:hover img {
+  transform: scale(1.1);
+}
+
+.team .member .member-info {
+  position: absolute;
+  bottom: -48px;
+  left: 20px;
+  right: 20px;
+  background: linear-gradient(360deg, #5c768d 0%, rgba(92, 118, 141, 0.9) 35%, rgba(140, 167, 191, 0.8) 100%);
+  padding: 15px 0;
+  border-radius: 4px;
+}
+
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.team .member h4::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #fff;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+
+.team .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+  color: #fff;
+}
+
+.team .member .social {
+  margin-top: 15px;
+}
+
+.team .member .social a {
+  transition: color 0.3s;
+  color: #fff;
+}
+
+.team .member .social a:hover {
+  color: #9eccf4;
+}
+
+.team .member .social i {
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+@media (max-width: 992px) {
+  .team .member {
+    margin-bottom: 100px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section, 배너
+--------------------------------------------------------------*/
+.bannerItem {
+   width: 1150px;
+   height: 500px;
+}
+.imgp {
+   text-align: center;
+}
+
+#hero {
+  width: 100%;
+  height: calc(100vh - 114px);
+  padding: 0;
+  overflow: hidden;
+}
+.section {
+  padding: 0rem 0;
+}
+
+#hero .carousel-item {
+  width: 100%;
+  height: calc(100vh - 114px);
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#hero .carousel-item::before {
+  content: '';
+  background-color: rgba(13, 30, 45, 0.6);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#hero .carousel-container {
+   margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+#hero .carousel-content {
+  text-align: left;
+  
+  text-shadow: 1px 1px 5px #000;
+}
+
+@media (max-width: 992px) {
+  #hero, #hero .carousel-item {
+    height: calc(100vh - 70px);
+  }
+  #hero .carousel-content.container {
+    padding: 0 50px;
+  }
+}
+
+#hero h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  margin-left : 50px;
+  font-size: 48px;
+  font-weight: 900;
+}
+
+#hero p {
+  width: 80%;
+  margin-left : 50px;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  color: #fff;
+}
+
+#hero .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  opacity: 0;
+}
+
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-left,
+#hero .carousel-inner .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#hero .carousel-inner .carousel-item-next,
+#hero .carousel-inner .carousel-item-prev,
+#hero .carousel-inner .active.carousel-item-left,
+#hero .carousel-inner .active.carousel-item-right {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+#hero .carousel-control-prev, #hero .carousel-control-next {
+  width: 10%;
+}
+
+#hero .carousel-control-next-icon, #hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 48px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+
+#hero .carousel-indicators li {
+  cursor: pointer;
+}
+
+#hero .btn-get-started {
+  font-family: 'Do Hyeon', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 5px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  margin-left : 50px;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  border: 0;
+  background: #F5dF4D;  
+}
+
+#hero .btn-get-started:hover {
+  background: #f5ecae;
+}
+
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero p {
+    width: 60%;
+  }
+  #hero .carousel-control-prev, #hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section, 배너 End
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# 일정만들기  Calendar Start
+--------------------------------------------------------------*/
+
+.title_box {
+    width: 100%;
+    line-height: 60px;
+   border-bottom: 1px solid #b3b3b3;
+    font-size: 30px;
+    color: #000000;
+    padding-top: 20px;
+    padding-left: 13px;
+    padding-bottom:10px;
+    overflow: hidden;
+    text-align: center;
+    
+    text-align: center;
+}
+
+.popup_content {
+    width: 100%;
+   padding-left: 13px;
+    padding-top: 20px;
+    padding-bottom:13px;
+    color: #4f4e4e;
+
+}
+.popup_content input[type="text"] {
+  
+  border: none;
+  border-bottom: 1px solid #939597;
+  background-color: transparent;
+  transition: top .5s ease;
+  color: #939597;
+  font-size: 15px;
+}
+
+.popup_footer {
+    width: 100%;
+    /* border-top: 1px solid #b3b3b3; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    float: right;
+}
+.fr {
+   float: right;
+}
+.fr button {
+   border: 1px solid #F5dF4D; 
+   background-color: #F5dF4D; 
+   color:#939597; 
+   padding: auto;
+   margin: 0 auto; 
+   text-align: center;
+}
+/*———————————————————————————————
+# 일정만들기  Calendar End
+———————————————————————————————*/
+
+/*———————————————————————————————
+# Paging  Start
+———————————————————————————————*/
+.pagination {
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #F5dF4D;
+  background-color: #fff;
+  border: 1px solid #F5dF4D;
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: #F5dF4D;
+  text-decoration: none;
+  background-color: #F5dF4D;
+  border-color: #F5dF4D;
+}
+
+.page-link:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #F5dF4D;
+}
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.page-item:last-child .page-link {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #939597;
+  background-color: #F5dF4D;
+  border-color: #F5dF4D;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #939597;
+  border-color: #F5dF4D;
+}
+
+.pagination-lg .page-link {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.pagination-lg .page-item:first-child .page-link {
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+}
+
+.pagination-lg .page-item:last-child .page-link {
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.pagination-sm .page-link {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.pagination-sm .page-item:first-child .page-link {
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+}
+
+.pagination-sm .page-item:last-child .page-link {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+/*———————————————————————————————
+# Paging  End
+———————————————————————————————*/
+
+/*———————————————————————————————
+# myPlanView Table  Start
+———————————————————————————————*/
+#myPlanViewT {
+	width: 100%;
+    border-top: 100px solid #ffffff;
+    border-collapse: collapse;
+    color:#4d4949;
+    text-align: center;
+}
+#myPlanViewT th {
+    text-align: center; 
+    border-bottom: 1px solid #ffffff;
+    padding: 10px;
+    font-size: 22px;	
+}
+#myPlanView td {
+    text-align: center; 
+    border-bottom: 1px solid #ffffff;
+    padding: 10px;
+}
+/*———————————————————————————————
+# myPlanView Table  End
+———————————————————————————————*/

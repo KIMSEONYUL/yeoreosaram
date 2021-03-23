@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.icia.web.dao.PlanDateDao">
+
+<!-- resultMap 시작 -->
+<resultMap type="com.icia.web.model.PlanDate" id="planDateResultMap">
+   <result column="P_DAY" property="pDay" />
+   <result column="P_PLACE" property="pPlace" />
+   <result column="P_NO_SEQ2" property="pNoSeq2" />
+</resultMap>
+
+<insert id="planDateInsert2" parameterType="com.icia.web.model.PlanDate">
+INSERT INTO PLAN_DATE (
+    P_NO_SEQ2,
+    P_DAY,
+    P_PLACE,
+    USER_ID2
+) VALUES (
+    #{pNoSeq2},
+    #{pDay},
+   	#{pPlace},
+    #{userId2}
+)
+</insert>
+
+
+<select id="planDateSelect2" parameterType="com.icia.web.model.PlanDate" resultMap="planDateResultMap">
+SELECT
+    A.P_NO_SEQ2,
+    TO_CHAR(TO_DATE(NVL(A.P_DAY, '')), 'YYYY-MM-DD') AS P_DAY,
+    NVL(A.P_PLACE,'') AS P_PLACE,
+    NVL(A.USER_ID2, '') AS USER_ID2
+FROM
+    PLAN_DATE A, PLAN_MAKE B
+WHERE A.P_NO_SEQ2 = B.P_NO_SEQ
+  AND A.P_NO_SEQ2 = #{pNoSeq2}
+</select>
+
+<select id="planList" parameterType="com.icia.web.model.PlanDate" resultMap="planDateResultMap">
+SELECT
+    NVL(D.P_NO_SEQ2, '') AS P_NO_SEQ2,
+    NVL(M.USER_ID2, '') AS USER_ID2,
+    NVL(M.P_TITLE, '') AS P_TITLE,
+    M.REG_DATE2 AS REG_DATE2,
+    TO_CHAR(TO_DATE(NVL(D.P_DAY, '')), 'YYYY-MM-DD') AS P_DAY,
+    NVL(M.P_START, '') AS P_START,
+    NVL(M.P_END, '') AS P_END,
+    NVL(D.P_PLACE, '') AS P_PLACE
+FROM
+    PLAN_MAKE M, PLAN_DATE D
+WHERE M.USER_ID2 = #{userId2}
+  AND M.P_NO_SEQ = D.P_NO_SEQ2
+ORDER BY P_DAY ASC
+</select>
+
+<select id="planViewList" parameterType="com.icia.web.model.PlanDate" resultMap="planDateResultMap">
+SELECT
+    NVL(D.P_NO_SEQ2, '') AS P_NO_SEQ2,
+    TO_CHAR(TO_DATE(NVL(D.P_DAY, '')), 'YYYY-MM-DD') AS P_DAY,
+    NVL(D.P_PLACE, '') AS P_PLACE
+FROM PLAN_DATE D 
+WHERE USER_ID2 = #{userId2}
+  AND P_NO_SEQ2 = #{pNoSeq2}
+ORDER BY P_DAY ASC
+</select>
+
+<delete id="planDelete" parameterType="long">
+DELETE FROM PLAN_DATE
+ WHERE P_NO_SEQ2 = #{value}
+</delete>
+
+</mapper>
